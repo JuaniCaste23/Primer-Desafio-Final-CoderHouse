@@ -10,15 +10,15 @@ import { StudentModalComponent } from 'src/app/shared/components/student-modal/s
 })
 
 export class StudentsPageComponent {
-  displayedColumns = ['id','nombre','apellido','carrera','boolean','modificar','baja']
+  displayedColumns = ['id','nombre','apellido','carrera','modificar','baja']
   alumnos: AlumnoModel[] = [
 
-    new AlumnoModel(1,'Juan','Castelli','Matematica',false),
-    new AlumnoModel(2,'Seba','Holowaty','Literatura',false),
-    new AlumnoModel(3,'Ignacio','Gomez','Sistemas',true),
-    new AlumnoModel(4,'Leonel','Castro','Matematica',false),
-    new AlumnoModel(5,'Goku','Son','Sistemas',true),
-    new AlumnoModel(6,'Leonel','Messi','Futbol',false)
+    new AlumnoModel(1,'Juan','Castelli','Matematica'),
+    new AlumnoModel(2,'Seba','Holowaty','Literatura'),
+    new AlumnoModel(3,'Ignacio','Gomez','Sistemas'),
+    new AlumnoModel(4,'Leonel','Castro','Matematica'),
+    new AlumnoModel(5,'Goku','Son','Sistemas'),
+    new AlumnoModel(6,'Leonel','Messi','Futbol')
 
   ];
 
@@ -30,10 +30,10 @@ export class StudentsPageComponent {
    dialog.afterClosed().subscribe((value) => {
       const lastId = this.alumnos[this.alumnos.length -1]?.id
       if ( value && this.alumnos.length >= 1) {
-        this.alumnos = [...this.alumnos, new AlumnoModel(lastId + 1,value.nombre,value.apellido,value.carrera, true)]
+        this.alumnos = [...this.alumnos, new AlumnoModel(lastId + 1,value.nombre,value.apellido,value.carrera)]
       }
       else {
-        this.alumnos = [new AlumnoModel(1,value.nombre,value.apellido,value.carrera, true)]
+        this.alumnos = [new AlumnoModel(1,value.nombre,value.apellido,value.carrera)]
       }
    })
   }

@@ -3,8 +3,6 @@ interface AlumnoContract {
   nombre: string;
   apellido: string;
   carrera: string;
-  boolean: boolean;
-
 }
 
 export class AlumnoModel implements AlumnoContract{
@@ -13,16 +11,14 @@ export class AlumnoModel implements AlumnoContract{
   nombre: string;
   apellido: string;
   carrera: string;
-  boolean: boolean;
 
 
-  constructor(id: number, nombre: string, apellido: string, carrera: string, boolean: boolean)
+  constructor(id: number, nombre: string, apellido: string, carrera: string)
   {
     this.id = id;
     this.nombre = nombre;
     this.apellido = apellido;
     this.carrera = carrera;
-    this.boolean = boolean;
   }
 
 }
